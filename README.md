@@ -1,29 +1,16 @@
-# AI Text Analyzer
+# AI Automated Triage System Assistant
 
-A simple local AI-powered text analysis application built with Streamlit and Ollama. The app lets you paste any text, choose an AI task, and generate results using a locally hosted large language model (LLM).
+This project is a local AI-powered triage assistant prototype built with Streamlit and Ollama. The goal is to help support hospital triage decision-making by analyzing patient information and suggesting an appropriate triage level based on symptoms, vital signs, and urgency indicators.
 
 ## Overview
 
-This project demonstrates how to build a lightweight web UI for local AI inference using:
+This application is designed as a simple healthcare AI assistance demo for emergency or hospital triage workflows. It allows a user to input patient information or text describing the patient's condition, then use a local large language model to help determine:
 
-- Streamlit for the frontend interface
-- Ollama as the local model runner
-- Python for application logic and prompt orchestration
+- the patient's urgency level,
+- possible red flags,
+- and a recommended triage category.
 
-The app supports several text-processing tasks, including:
-
-- Summarizing text
-- Performing sentiment analysis
-- Extracting key points
-- Generating a quiz from the text
-- Explaining the content for beginners
-
-## Project Structure
-
-- `app.py` — Streamlit web application
-- `requirements.txt` — Python dependencies
-- `evidence/` — supporting project artifacts or outputs
-- `README.md` — project documentation
+The system is meant for educational and prototype use, especially in environments where data privacy is important and local inference is preferred.
 
 ## Tech Stack
 
@@ -34,48 +21,61 @@ The app supports several text-processing tasks, including:
 - NumPy
 - Pandas
 
+## Project Structure
+
+- `app.py` — Streamlit web application for the triage assistant interface
+- `requirements.txt` — Python dependencies
+- `evidence/` — supporting outputs or project evidence
+- `README.md` — project documentation
+
 ## Prerequisites
 
-Before running the app, make sure you have:
+Before running the project, make sure you have:
 
 1. Python 3.10+ installed
-2. Ollama installed on your machine
-3. A model downloaded locally, such as:
+2. Ollama installed locally
+3. A local model downloaded, such as:
    - `llama3.2:latest`
    - `qwen2.5:3b`
 
 ## Installation
 
 1. Clone the repository.
-2. Create and activate a virtual environment:
+
+```bash
+git clone https://github.com/maqidz-ops/local-ai-assistant.git
+cd local-ai-assistant
+```
+
+2. Create and activate a virtual environment.
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 ```
 
-3. Install the dependencies:
+3. Install the required dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Start Ollama locally:
+4. Start Ollama locally.
 
 ```bash
 ollama serve
 ```
 
-5. Pull a model if needed:
+5. Pull the model you want to use.
 
 ```bash
 ollama pull llama3.2:latest
-ollama pull qwwn2.5:3b
+ollama pull qwen2.5:3b
 ```
 
 ## Run the App
 
-Launch the Streamlit application:
+Start the Streamlit app with:
 
 ```bash
 streamlit run app.py
@@ -89,18 +89,18 @@ http://localhost:8501
 
 ## How to Use
 
-1. Paste text into the input area.
-2. Select a task such as summarize, sentiment analysis, or quiz creation.
-3. Choose the LLM model from the sidebar.
+1. Enter patient information or a brief clinical description.
+2. Choose the AI task or triage evaluation approach.
+3. Select the local model from the sidebar.
 4. Adjust the temperature if needed.
-5. Click the process button to generate the result.
+5. Click the button to generate the triage-related response.
 
 ## Notes
 
-This project is intended as a simple demo for local AI usage with a web interface. It is useful for learning how to connect a Python app to a local model backend and craft effective prompts for different NLP tasks.
+This project is a prototype and should not be used as a medical decision-making system without clinical validation. It is intended to demonstrate how local AI can support hospital triage workflows while keeping inference on a private local machine.
 
 ## Troubleshooting
 
-- If the app cannot connect to Ollama, ensure `ollama serve` is running.
-- If a model is missing, run `ollama pull <model-name>`.
-- If Streamlit is not found, verify that the virtual environment is activated and dependencies are installed.
+- If the app cannot connect to Ollama, make sure `ollama serve` is running.
+- If the model is missing, run `ollama pull <model-name>`.
+- If Streamlit is not found, verify that the virtual environment is active and dependencies are installed.
