@@ -35,8 +35,8 @@ Before running the project, make sure you have:
 1. Python 3.10+ installed
 2. Ollama installed locally
 3. A local model downloaded, such as:
-   - `llama3.2:3b`
-   - `qwen2.5:3b`
+   - `llama3.2:1b`
+   - `qwen2.5:1.5b`
 
 ## Installation
 
@@ -69,8 +69,8 @@ ollama serve
 5. Pull the model you want to use.
 
 ```bash
-ollama pull llama3.2:3b
-ollama pull qwen2.5:3b
+ollama pull llama3.2:1b
+ollama pull qwen2.5:1.5b
 ```
 
 ## Run the App
