@@ -35,7 +35,7 @@ Before running the project, make sure you have:
 1. Python 3.10+ installed
 2. Ollama installed locally
 3. A local model downloaded, such as:
-   - `llama3.2:1b`
+   - `llama3.2:3b`
    - `qwen2.5:1.5b`
 
 ## Installation
@@ -60,16 +60,21 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Start Ollama locally.
+4. Install Library Python 3.12
+```bash
+python3.12 -m pip install streamlit pandas pyarrow
+```
+
+5. Start Ollama locally.
 
 ```bash
 ollama serve
 ```
 
-5. Pull the model you want to use.
+6. Pull the model you want to use.
 
 ```bash
-ollama pull llama3.2:1b
+ollama pull llama3.2:3b
 ollama pull qwen2.5:1.5b
 ```
 
@@ -78,7 +83,7 @@ ollama pull qwen2.5:1.5b
 Start the Streamlit app with:
 
 ```bash
-streamlit run app.py
+python3.12 -m streamlit run app.py
 ```
 
 Then open the local URL shown in the terminal, usually:
